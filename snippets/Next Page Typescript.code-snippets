@@ -1,0 +1,29 @@
+{
+  // Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+  // Placeholders with the same ids are connected.
+  // Example:
+  "Create Next Page Typescript": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "rty",
+    "body": [
+      "import type { NextPage } from 'next';",
+      "import Head from 'next/head';",
+      "const ${1:page}: NextPage = () => {",
+      "return (",
+      "<>",
+      "<Head>",
+      "<title>${1:title}</title>",
+      "<link rel='icon' href='/favicon.ico' />",
+      "<meta name='description' content='${2:description}'/>",
+      "</Head>",
+      "<div>${1:page}</div>",
+      "</>);};",
+      "export default ${1:page};"
+    ],
+    "description": "Create Next Page with Typescript"
+  }
+}

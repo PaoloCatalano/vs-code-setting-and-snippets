@@ -1,0 +1,41 @@
+{
+  // Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+  // Placeholders with the same ids are connected.
+
+  "Loading on change Route": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "loading",
+    "body": [
+      " //imports",
+      "import Loader from '../components/Loader';",
+      "import { useState, useEffect } from 'react';",
+      "const [isLoading, setIsLoading] = useState(false);",
+      "",
+      "useEffect(() => {",
+      "Router.events.on('routeChangeStart', (url) => {",
+      "//console.log(url);",
+      "setIsLoading(true);",
+      "//console.log('start changing');",
+      "});",
+      "",
+      "Router.events.on('routeChangeComplete', (url) => {",
+      "setIsLoading(false);",
+      "//console.log('route changing finished');",
+      "});",
+      "",
+      "Router.events.on('routeChangeError', (url) => {",
+      "setIsLoading(false);",
+      "//console.log('route error');",
+      "});",
+      "}, [Router]);",
+      "",
+      "//Component",
+      "{isLoading && <Loader />}"
+    ],
+    "description": "Loading state when changing routes in Next.js"
+  }
+}
